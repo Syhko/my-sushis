@@ -1,0 +1,52 @@
+.overlay-wrapper {
+  width: 19%;
+  height: 100vh;
+  border: solid 1px #000;
+  position: fixed;
+  right:0%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  background-color: #000;
+}
+
+.overlay-list {
+  overflow: auto;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-title {
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 1px;
+  background-color: #222;
+  display: block;
+  color: #fd6060;
+  text-shadow: 2px 2px #000;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Titillium Web', sans-serif;
+  user-select: none;
+  justify-content: center;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fd6060;
+  border-radius: 10px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7060;
+}

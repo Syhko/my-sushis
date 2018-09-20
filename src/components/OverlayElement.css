@@ -1,0 +1,29 @@
+.overlay-element-wrapper {
+  width: 100%;
+  height: 6vh;
+  margin-bottom: 1px;
+  flex-direction: column;
+  background-color: #222;
+  display: block;
+
+}
+
+.overlay-element-name {
+  color: #eeaa7d;
+  text-shadow: 2px 2px #000;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Titillium Web', sans-serif;
+  user-select: none;
+}
+
+.overlay-element-address {
+  font-size: 14px;
+  text-align: center;
+  color: #777;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.overlay-element-wrapper:hover {
+  background-color: #333;
+}
