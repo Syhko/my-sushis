@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 // STYLE
 import "./MapComponent.css";
 // MAPBOX + REACT-MAPBOX
-import ReactMapboxGl, { ZoomControl, ScaleControl, Layer, Feature, Popup } from 'react-mapbox-gl';
+import ReactMapboxGl, { Layer, Marker, Feature, Popup } from 'react-mapbox-gl';
 // DATABASE
 import sushis from '../database/sushis';
 // COMPONENTS
@@ -59,7 +59,7 @@ class MapComponent extends PureComponent {
 
   render() {
 
-    const { boundNE, boundSE, boundNW, boundSW, initPitch, initZoom, initCenter, geodata, PopUpText, PopUpCoord, showPopUp, resistshowPopUp } = this.state;
+    const { initPitch, initZoom, initCenter, geodata, PopUpText, PopUpCoord, showPopUp } = this.state;
     const sushisList = geodata.sushis;
 
     //mapping through the state to extract just the array of coordinates
@@ -67,11 +67,8 @@ class MapComponent extends PureComponent {
 
     //constructing the layer of all markers with the array of coordinates
     const sushisFeatures = sushisCoordinates.map((coordinates, key) =>(
-      <Feature
+    <Feature
         className="sushi-feature"
-        style={{
-          cursor: "pointer"
-        }}
         coordinates={sushisCoordinates[key]}
         onClick={this.goToPosition}
         key={key}
