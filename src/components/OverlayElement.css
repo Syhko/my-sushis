@@ -1,6 +1,6 @@
 .overlay-element-wrapper {
   width: 100%;
-  height: 9vh;
+  height: 60px;
   margin-bottom: 1px;
   flex-direction: column;
   background-color: #222;
@@ -9,7 +9,23 @@
 }
 
 .overlay-element-name-wrapper {
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.button-restaurant {
+  align-self: center;
+  margin-left: 5px;
+  height: 50%;
+  background-color: #111;
+  border: none;
+}
+
+.button-restaurant:hover {
+  background-color: #fd6060;
 }
 
 .overlay-element-name {
@@ -19,6 +35,8 @@
   font-size: 15px;
   font-family: 'Titillium Web', sans-serif;
   user-select: none;
+  width: 100%;
+  margin: auto;
 }
 
 .overlay-element-address {

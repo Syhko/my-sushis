@@ -8,6 +8,12 @@ import ReactMapboxGl, { Layer, Marker, Feature, Popup } from 'react-mapbox-gl';
 import sushis from '../database/sushis';
 // COMPONENTS
 import OverlayList from './OverlayList';
+//BOOTSTRAP
+import { Glyphicon, Button, Modal } from 'react-bootstrap';
+// REACT RATING
+import Rating from 'react-rating';
+import sushi_green from './sushi_green.png';
+import sushi_black from './sushi_black.png';
 
 
 
@@ -28,7 +34,9 @@ class MapComponent extends PureComponent {
     boundSE: [17.980735763032868, 59.39432212307344],
     boundSW: [18.14569055631918, 59.29325007072629],
     boundNW: [18.14569055631918, 59.29325007072629],
-    showPopUp: false
+    showPopUp: false,
+    showModal: false,
+    ratingValue: 0
   }
 
   //Allow a popup to render with given coordinates and name of feature hovered
@@ -57,9 +65,17 @@ class MapComponent extends PureComponent {
     this.setState({ initCenter : [event.coordinates[0], event.coordinates[1]], initZoom : [17] })
   }
 
+  openModal = () => {
+    this.setState({ showModal : true });
+  }
+
+  closeModal = () => {
+    this.setState({ showModal : false });
+  }
+
   render() {
 
-    const { initPitch, initZoom, initCenter, geodata, PopUpText, PopUpCoord, showPopUp } = this.state;
+    const { ratingValue, showModal, closeModal, initPitch, initZoom, initCenter, geodata, PopUpText, PopUpCoord, showPopUp } = this.state;
     const sushisList = geodata.sushis;
 
     //mapping through the state to extract just the array of coordinates
@@ -125,6 +141,7 @@ class MapComponent extends PureComponent {
           </Popup>}
           <OverlayList
             onItemClicked={this.goToPositionbyOverlay}
+            onButtonClicked={this.openModal}
             onHover={this.PopupByOverlay}
             handleMouseLeave={this.detogglePopup}
             boundNE={this.state.boundNE}
@@ -133,6 +150,38 @@ class MapComponent extends PureComponent {
             boundNW={this.state.boundNW}
           />
         </Map>
+        <Modal show={showModal} onHide={closeModal}>
+          <Modal.Header>
+            <p>Name of the restaurant</p>
+            <Button
+              className="close-modal-button"
+              onClick={this.closeModal}
+            >
+              <Glyphicon glyph="remove"/>
+            </Button>
+          </Modal.Header>
+          <Modal.Body>
+          <p>Some information about the restaurant like bullet points ...</p>
+          <ul>
+            <li>QUALITY</li>
+            <li>TYPE OF SUSHI</li>
+            <li>OVERALL REVIEW</li>                        
+          </ul>
+          </Modal.Body>
+          <Modal.Footer>
+            <p>Rating :</p>
+            <Rating
+              initialRating={ratingValue}
+              ref="rate"
+              className="rating-wrapper"
+              onClick={(ratingValue) => this.setState({ ratingValue })}
+              fractions={2}
+              emptySymbol={<img src={sushi_black} className="rating-icon" />}
+              fullSymbol={<img src={sushi_green} className="rating-icon" />}
+            />
+
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }

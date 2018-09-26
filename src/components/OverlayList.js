@@ -50,6 +50,7 @@ class OverlayList extends Component {
         coordinates={sushisList[key].geometry.coordinates}
         key={key}
         onItemClicked={this.props.onItemClicked}
+        onButtonClicked={this.props.onButtonClicked}
         onHover={this.props.onHover}
         handleMouseLeave={this.props.handleMouseLeave}
       />

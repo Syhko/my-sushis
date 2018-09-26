@@ -14,12 +14,34 @@
   color: #000;
 }
 
-.sushi-feature {
-  cursor: pointer;
+.modal-dialog {
+  top: 10%;
+  right: 10%;
 }
 
-#Marker {
-  cursor: pointer;
+.modal-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-content {
+  background-color: #222;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 17px;
+  color: #fff;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.close-modal-button {
+  background-color: #fd6060;
+  border: none;
+  color: #fff;
+  position: fixed;
+  right: 3%;
 }
 
 .syhko-credits {

@@ -6,6 +6,8 @@ import './OverlayElement.css';
 import Rating from 'react-rating';
 import sushi_green from './sushi_green.png';
 import sushi_black from './sushi_black.png';
+// BOOTSTRAP
+import { ButtonToolbar, ButtonGroup, Button, Glyphicon } from 'react-bootstrap';
 
 class OverlayElement extends Component {
 
@@ -31,9 +33,15 @@ class OverlayElement extends Component {
         className="overlay-element-name-wrapper"
         onClick={() => this.props.onItemClicked(this.state.datas)}
         >
-        <p className="overlay-element-name">{this.props.name}</p>
+          <Button
+            className="button-restaurant"
+            onClick={this.props.onButtonClicked}
+          >
+            <Glyphicon glyph="info-sign"/>
+          </Button>
+          <p className="overlay-element-name">{this.props.name}</p>
         </div>
-        <Rating
+        {/*<Rating
           initialRating={value}
           ref="rate"
           className="rating-wrapper"
@@ -41,7 +49,7 @@ class OverlayElement extends Component {
           fractions={2}
           emptySymbol={<img src={sushi_black} className="rating-icon" />}
           fullSymbol={<img src={sushi_green} className="rating-icon" />}
-        />
+        />*/}
       </div>
     );
   }
