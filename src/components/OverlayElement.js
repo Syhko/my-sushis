@@ -29,7 +29,7 @@ class OverlayElement extends Component {
         >
           <Button
             className="button-restaurant"
-            onClick={this.props.onButtonClicked}
+            onClick={() => this.props.onButtonClicked(this.state.datas)}
           >
             <Glyphicon glyph="info-sign"/>
           </Button>
@@ -40,7 +40,6 @@ class OverlayElement extends Component {
             {this.props.name}
           </p>
         </div>
-        {/**/}
       </div>
     );
   }

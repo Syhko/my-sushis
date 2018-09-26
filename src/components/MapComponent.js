@@ -36,7 +36,8 @@ class MapComponent extends PureComponent {
     boundNW: [18.14569055631918, 59.29325007072629],
     showPopUp: false,
     showModal: false,
-    ratingValue: 0
+    ratingValue: 0,
+    modalName: []
   }
 
   //Allow a popup to render with given coordinates and name of feature hovered
@@ -65,8 +66,9 @@ class MapComponent extends PureComponent {
     this.setState({ initCenter : [event.coordinates[0], event.coordinates[1]], initZoom : [17] })
   }
 
-  openModal = () => {
-    this.setState({ showModal : true });
+  openModal = (event) => {
+    this.setState({ showModal : true, modalName : event.name });
+    console.log(event);
   }
 
   closeModal = () => {
@@ -75,7 +77,7 @@ class MapComponent extends PureComponent {
 
   render() {
 
-    const { ratingValue, showModal, closeModal, initPitch, initZoom, initCenter, geodata, PopUpText, PopUpCoord, showPopUp } = this.state;
+    const { modalName, ratingValue, showModal, closeModal, initPitch, initZoom, initCenter, geodata, PopUpText, PopUpCoord, showPopUp } = this.state;
     const sushisList = geodata.sushis;
 
     //mapping through the state to extract just the array of coordinates
@@ -152,7 +154,7 @@ class MapComponent extends PureComponent {
         </Map>
         <Modal show={showModal} onHide={closeModal}>
           <Modal.Header>
-            <p>Name of the restaurant</p>
+            <p>{modalName}</p>
             <Button
               className="close-modal-button"
               onClick={this.closeModal}
@@ -165,7 +167,7 @@ class MapComponent extends PureComponent {
           <ul>
             <li>QUALITY</li>
             <li>TYPE OF SUSHI</li>
-            <li>OVERALL REVIEW</li>                        
+            <li>OVERALL REVIEW</li>
           </ul>
           </Modal.Body>
           <Modal.Footer>

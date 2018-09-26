@@ -22,6 +22,9 @@
 .modal-header {
   display: flex;
   flex-direction: row;
+  font-size: 24px;
+  color: #fd6060;
+  text-shadow: 3px 2px black;
 }
 
 .modal-content {
