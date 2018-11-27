@@ -8,12 +8,8 @@ import ReactMapboxGl, { Layer, Marker, Feature, Popup } from 'react-mapbox-gl';
 import sushis from '../database/sushis';
 // COMPONENTS
 import OverlayList from './OverlayList';
-//BOOTSTRAP
-import { Glyphicon, Button, Modal } from 'react-bootstrap';
-// REACT RATING
-import Rating from 'react-rating';
-import sushi_green from './sushi_green.png';
-import sushi_black from './sushi_black.png';
+import RestaurantModal from './RestaurantModal';
+
 
 
 
@@ -152,38 +148,12 @@ class MapComponent extends PureComponent {
             boundNW={this.state.boundNW}
           />
         </Map>
-        <Modal show={showModal} onHide={closeModal}>
-          <Modal.Header>
-            <p>{modalName}</p>
-            <Button
-              className="close-modal-button"
-              onClick={this.closeModal}
-            >
-              <Glyphicon glyph="remove"/>
-            </Button>
-          </Modal.Header>
-          <Modal.Body>
-          <p>Some information about the restaurant like bullet points ...</p>
-          <ul>
-            <li>QUALITY</li>
-            <li>TYPE OF SUSHI</li>
-            <li>OVERALL REVIEW</li>
-          </ul>
-          </Modal.Body>
-          <Modal.Footer>
-            <p>Rating :</p>
-            <Rating
-              initialRating={ratingValue}
-              ref="rate"
-              className="rating-wrapper"
-              onClick={(ratingValue) => this.setState({ ratingValue })}
-              fractions={2}
-              emptySymbol={<img src={sushi_black} className="rating-icon" />}
-              fullSymbol={<img src={sushi_green} className="rating-icon" />}
-            />
-
-          </Modal.Footer>
-        </Modal>
+        <RestaurantModal
+          showModal={showModal}
+          closeModal={closeModal}
+          modalName={modalName}
+          handleCloseModal={this.closeModal}
+        />
       </div>
     );
   }
