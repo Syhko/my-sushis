@@ -1,0 +1,47 @@
+.modal-dialog {
+  top: 10%;
+  right: 10%;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  font-size: 24px;
+  color: #fd6060;
+  text-shadow: 3px 2px black;
+}
+
+.modal-content {
+  background-color: #222;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 17px;
+  color: #fff;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.close-modal-button {
+  background-color: #fd6060;
+  border: none;
+  color: #fff;
+  position: fixed;
+  right: 3%;
+}
+
+.edit-modal-button {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  position: fixed;
+  right: 10%;
+}
+
+.non-edit-text {
+}
+
+.edit-text {
+  border : 2px solid white;
+}
