@@ -54,6 +54,7 @@ class MapComponent extends PureComponent {
 
   //Set position of the center of the map on the clicked feature, be careful zoom have to be an array !
   goToPosition = (event) => {
+    console.log(event);
     this.setState({ initCenter : [event.lngLat.lng, event.lngLat.lat], initZoom : [17], resistshowPopUp: true })
   }
 
@@ -106,7 +107,7 @@ class MapComponent extends PureComponent {
           pitch={initPitch}
           containerStyle={{
           height: "100vh",
-          width: "81vw"
+          width: "100vw"
           }}
           onZoomEnd={this.resetPitch}
           onMove={(map) => { this.setState({

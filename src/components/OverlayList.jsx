@@ -58,9 +58,6 @@ class OverlayList extends Component {
 
     return(
       <div className="overlay-wrapper">
-        <div className="overlay-title">
-          <p className="overlay-title-text">All sushis restaurants in current area</p>
-        </div>
         <div className="overlay-list">
           {overlaySushisList}
         </div>

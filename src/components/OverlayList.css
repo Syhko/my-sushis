@@ -1,13 +1,15 @@
 .overlay-wrapper {
-  width: 19%;
-  height: 100vh;
+  width: 20%;
+  height: 90vh;
   border: solid 1px #000;
   position: fixed;
-  right:0%;
+  right: 0.5%;
+  top:5%;
   display: flex;
   flex-direction: column;
   z-index: 1;
   background-color: #000;
+  border-radius: 5px;
 }
 
 .overlay-list {
@@ -15,20 +17,6 @@
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-}
-
-.overlay-title {
-  width: 100%;
-  height: 8vh;
-  margin-bottom: 1px;
-  background-color: #222;
-  display: block;
-  color: #fd6060;
-  text-shadow: 2px 2px #000;
-  text-align: center;
-  font-size: 18px;
-  font-family: 'Titillium Web', sans-serif;
-  user-select: none;
 }
 
 ::-webkit-scrollbar {

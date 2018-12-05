@@ -1,4 +1,4 @@
-// REACT
+//REACT
 import React, { Component } from 'react';
 // STYLE
 import './OverlayElement.css';
@@ -25,7 +25,7 @@ class OverlayElement extends Component {
         onMouseLeave={this.props.handleMouseLeave}
       >
         <div
-        className="overlay-element-name-wrapper"
+          className="overlay-element-name-wrapper"
         >
           <Button
             className="button-restaurant"
