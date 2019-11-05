@@ -1,6 +1,6 @@
 .overlay-element-wrapper {
   width: 100%;
-  height: 60px;
+  min-height: 60px;
   margin-bottom: 1px;
   flex-direction: column;
   background-color: #222;
@@ -33,7 +33,7 @@
   text-shadow: 2px 2px #000;
   text-align: center;
   font-size: 15px;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   user-select: none;
   width: 100%;
   margin: auto;
@@ -43,7 +43,7 @@
   font-size: 14px;
   text-align: center;
   color: #777;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .overlay-element-wrapper:hover {
@@ -51,7 +51,6 @@
 }
 
 .rating-wrapper {
-
 }
 
 .rating-icon {

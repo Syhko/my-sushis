@@ -4,12 +4,28 @@
   border: solid 1px #000;
   position: fixed;
   right: 0.5%;
-  top:5%;
+  top: 5%;
   display: flex;
   flex-direction: column;
   z-index: 1;
   background-color: #000;
   border-radius: 5px;
+}
+
+.overlay-header {
+  display: flex;
+  width: 100%;
+  min-height: 60px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  font-size: 18px;
+}
+
+.overlay-header p {
+  margin: auto;
+  text-align: center;
 }
 
 .overlay-list {
